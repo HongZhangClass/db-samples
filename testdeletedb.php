@@ -1,27 +1,5 @@
 <?php
 
-require 'vendor/autoload.php';
-
-use Aws\Rds\RdsClient;
-$client = RdsClient::factory(array(
-'region'  => 'us-east-1'
-));
-
-
-$result = $client->describeDBInstances(array(
-    'DBInstanceIdentifier' => 'itmo544jrhdb',
-));
-
-
-$endpoint = ""; 
-
-
-foreach ($result->getPath('DBInstances/*/Endpoint/Address') as $ep) {
-    // Do something with the message
-    echo "============". $ep . "================";
-    $endpoint = $ep;
-}
-
 
 
 echo "begin database";
