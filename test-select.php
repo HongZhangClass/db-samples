@@ -1,9 +1,15 @@
+<html>
+<head><title>SQL query</title></head>
+<body>
+
+
 <?php
 
 
-
+$endpoint="192.168.1.239";
 echo "begin database";
-$link = mysqli_connect($endpoint,"controller","ilovebunnies","itmo544db") or die("Error " . mysqli_error($link));
+$link = mysqli_connect($endpoint,"root","ilovebunnies","store") or die("Error "
+. mysqli_error($link));
 
 /* check connection */
 if (mysqli_connect_errno()) {
@@ -19,10 +25,13 @@ while ($row = $res->fetch_assoc()) {
     echo " id = " . $row['id'] . "\n";
     echo " phone = " . $row['phone'] . "\n";
     echo " email = " . $row['email'] . "\n";
-    echo " s3finishedurl = " . $row['s3finishedurl'] . "\n";            
+    echo " s3finishedurl = " . $row['s3finishedurl'] . "\n";
 }
 
 
 $link->close();
 
 ?>
+
+</body>
+</html>
