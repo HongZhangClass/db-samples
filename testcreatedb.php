@@ -1,7 +1,5 @@
 <?php
 
-
-
 echo "begin database";
 $link = mysqli_connect($endpoint,"controller","ilovebunnies","itmo544db") or die("Error " . mysqli_error($link));
 
