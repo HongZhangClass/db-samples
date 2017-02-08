@@ -5,8 +5,8 @@
 
 <?php
 
-
-$endpoint="192.168.1.239";
+// change this endpoint to the IP of your database server
+$endpoint="192.168.1.240";
 echo "begin database";
 $link = mysqli_connect($endpoint,"root","ilovebunnies","store") or die("Error "
 . mysqli_error($link));
