@@ -6,9 +6,12 @@
 <?php
 
 // change this endpoint to the IP of your database server
-$endpoint="192.168.1.240";
+$endpoint="192.168.1.240";  // this is the public IP of the database server
+$user="username"; //this is the same username that you created in the create-user-with-grants.sql file -- change this from root as root is not allowed to make remote connections at all in mysql anymore
+$password="pword";  //this is the password that you entered in the create-user-with-grants.sql file after the IDENTIFIED BY string
+$db-name="store"; //this is the name of the database you created in create.sql -- store if you keep the default setting 
 echo "begin database";
-$link = mysqli_connect($endpoint,"root","ilovebunnies","store") or die("Error "
+$link = mysqli_connect($endpoint,$user,$password,$db) or die("Error "
 . mysqli_error($link));
 
 /* check connection */
